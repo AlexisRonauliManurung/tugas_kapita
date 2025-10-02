@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Kapita Selekta | Alexis Ronauli Manurung</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* --- Variabel CSS untuk kemudahan kustomisasi --- */
+        :root {
+            --primary-color: #0056b3; /* Biru Gelap */
+            --secondary-color: #007bff; /* Biru Terang */
+            --background-color: #f8f9fa; /* Abu-abu sangat terang */
+            --card-background: #ffffff;
+            --text-color: #343a40;
+            --heading-color: #212529;
+            --border-color: #dee2e6;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        /* --- Pengaturan Dasar --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header / Hero Section --- */
+        .hero-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-header h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-header .student-info p {
+            font-size: 1.2em;
+            margin: 4px 0;
+            opacity: 0.9;
+        }
+
+        .hero-header .student-info span {
+            font-weight: 600;
+        }
+        
+        /* --- Judul Section --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            color: var(--heading-color);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+
+        /* --- Layout Kartu (Grid) --- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card h3 i {
+            margin-right: 12px;
+            width: 20px; /* Lebar ikon konsisten */
+            text-align: center;
+        }
+        
+        /* Icon Colors */
+        .card.strengths h3 { color: #28a745; } /* Hijau */
+        .card.weaknesses h3 { color: #dc3545; } /* Merah */
+        .card.opportunities h3 { color: #ffc107; } /* Kuning */
+        .card.threats h3 { color: #6f42c1; } /* Ungu */
+        
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: '✓';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /* --- Analisis Porter (Layout Berbeda) --- */
+        .porters-list .card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .porters-list .card-content {
+            margin-top: 15px;
+        }
+
+        /* --- Placeholder Open Source --- */
+        .placeholder {
+            background-color: #e9f7ff;
+            border-left: 5px solid var(--secondary-color);
+            padding: 25px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        
+        .placeholder p {
+            margin: 0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+            border-top: 1px solid var(--border-color);
+            color: #6c757d;
+        }
+
+        /* --- Penyesuaian untuk Mobile --- */
+        @media (max-width: 768px) {
+            .hero-header h1 {
+                font-size: 2em;
+            }
+            .section-title {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-header">
+        <h1>Tugas Akhir RASP</h1>
+        <div class="student-info">
+            <p><span>Mata Kuliah:</span> Kapita Selekta A</p>
+            <p><span>Nama:</span> Alexis Ronauli Manurung</p>
+            <p><span>NPM:</span> 2215061109</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="swot">
+                <h2 class="section-title"><i class="fa-solid fa-magnifying-glass-chart"></i>Analisis SWOT Proyek KP</h2>
+                <div class="card-grid">
+                    <div class="card strengths">
+                        <h3><i class="fa-solid fa-bolt"></i>Strengths</h3>
+                        <ul>
+                            <li>Penerapan teknologi mutakhir (AI Generatif Gemini, RAG, Vertex AI).</li>
+                            <li>Sistem meningkatkan efisiensi, mengurangi human error, dan menstandarisasi laporan.</li>
+                            <li>Basis pengetahuan terkurasi dari regulasi resmi dan pengalaman senior.</li>
+                            <li>Dukungan mentor lapangan dan kolaborasi tim yang solid.</li>
+                        </ul>
+                    </div>
+                    <div class="card weaknesses">
+                        <h3><i class="fa-solid fa-circle-exclamation"></i>Weaknesses</h3>
+                        <ul>
+                            <li>Durasi magang singkat membatasi pengembangan fitur mendalam.</li>
+                            <li>Ketergantungan pada platform pihak ketiga (Google Vertex AI).</li>
+                            <li>Belum ada uji coba skala besar pada berbagai skenario industri.</li>
+                            <li>Pemeliharaan basis pengetahuan membutuhkan tenaga khusus.</li>
+                        </ul>
+                    </div>
+                    <div class="card opportunities">
+                        <h3><i class="fa-solid fa-lightbulb"></i>Opportunities</h3>
+                        <ul>
+                            <li>Tren transformasi digital dan otomatisasi di bidang K3.</li>
+                            <li>Potensi untuk dipublikasikan dalam jurnal atau konferensi.</li>
+                            <li>Dapat dikembangkan menjadi produk komersial (NAKERSOLUTIONS.ID).</li>
+                            <li>Relevan sebagai dasar topik skripsi yang inovatif dan aplikatif.</li>
+                        </ul>
+                    </div>
+                    <div class="card threats">
+                        <h3><i class="fa-solid fa-shield-halved"></i>Threats</h3>
+                        <ul>
+                            <li>Persaingan dengan solusi serupa dari perusahaan besar.</li>
+                            <li>Risiko keamanan data dan privasi dalam inspeksi K3.</li>
+                            <li>Perubahan regulasi pemerintah yang cepat dapat membuat basis pengetahuan usang.</li>
+                            <li>Potensi digantikan oleh sistem AutoML atau AI generatif lain.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="porters" style="margin-top: 60px;">
+                <h2 class="section-title"><i class="fa-solid fa-sitemap"></i>Analisis Porter’s Five Forces</h2>
+                <div class="card-grid porters-list">
+                    <div class="card">
+                        <h3><i class="fa-solid fa-users"></i>Ancaman Pendatang Baru</h3>
+                        <p><strong>Tinggi.</strong> Banyak startup dan penyedia jasa digital mulai menggarap solusi inspeksi berbasis AI dengan biaya rendah.</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-truck-fast"></i>Kekuatan Pemasok</h3>
+                        <p><strong>Tinggi.</strong> Ketergantungan pada penyedia teknologi cloud (Google) memberi mereka kekuatan menentukan harga dan fitur.</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-handshake"></i>Kekuatan Pembeli</h3>
+                        <p><strong>Tinggi.</strong> Perusahaan K3 memiliki banyak pilihan penyedia solusi, sehingga harga dan kualitas menjadi faktor krusial.</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-copy"></i>Ancaman Produk Pengganti</h3>
+                        <p><strong>Tinggi.</strong> Software K3 manual, AutoML, atau platform SaaS siap pakai bisa menggantikan sebagian fungsi sistem.</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-bullseye"></i>Persaingan Industri</h3>
+                        <p><strong>Sangat Tinggi.</strong> Bidang AI untuk efisiensi kerja sedang berkembang pesat sehingga persaingan semakin ketat.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="opensource" style="margin-top: 60px;">
+                <h2 class="section-title"><i class="fa-solid fa-code-branch"></i>Open Source Philosophy</h2>
+                <div class="placeholder">
+                    <p><strong>Bagian ini perlu Anda isi.</strong></p>
+                    <p>Silakan tambahkan materi mengenai filosofi open source sesuai dengan yang telah ditugaskan. Anda bisa menulisnya dalam beberapa paragraf di sini untuk melengkapi tugas.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Alexis Ronauli Manurung - Tugas Kapita Selekta, Universitas Lampung</p>
+    </footer>
+
+</body>
+</html>
